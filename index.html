@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0014">
+    <title>Para mi chiquitita hermosa ❤️</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- LOADER -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-heart">💖</div>
+            <div class="loader-text">Preparando tu universo...</div>
+            <div class="loader-bar">
+                <div class="loader-progress" id="loaderProgress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE INICIO -->
+    <div id="startScreen" class="start-screen">
+        <div class="start-content">
+            <h1 class="start-title">Para mi chiquitita hermosa</h1>
+            <p class="start-subtitle">Una historia escrita en las estrellas</p>
+            <button id="startBtn" class="btn-primary">
+                <span>Comenzar el viaje</span>
+                <span class="btn-icon">✨</span>
+            </button>
+            <p class="start-hint">🎧 Usa audífonos para mejor experiencia</p>
+        </div>
+    </div>
+
+    <!-- CANVAS DE LA GALAXIA -->
+    <canvas id="galaxyCanvas"></canvas>
+
+    <!-- NEBULOSAS DE FONDO -->
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <!-- ESCENA 1: PORTADA -->
+    <section class="scene active" data-scene="1">
+        <div class="scene-content center-content">
+            <div class="cosmic-text">
+                <p class="line fade-in">Para la niña que cambió mi universo...</p>
+            </div>
+            <div class="names-reveal">
+                <div class="name-item left">Melisa <span class="heart-emoji">❤️</span></div>
+                <div class="name-separator">&</div>
+                <div class="name-item right">Jonathan <span class="heart-emoji">❤️</span></div>
+            </div>
+            <div class="date-reveal">
+                <div class="date">15 · 05 · 26</div>
+                <div class="date-text">El día en que comenzó nuestra historia</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESCENA 2: FRASE -->
+    <section class="scene" data-scene="2">
+        <div class="scene-content center-content">
+            <div class="quote-box glass">
+                <p class="quote-line">"La distancia podrá separar nuestras manos...</p>
+                <p class="quote-line highlight">pero jamás nuestros corazones."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESCENA 3: APODOS -->
+    <section class="scene" data-scene="3">
+        <div class="scene-content">
+            <h2 class="scene-title">Mis palabras para ti</h2>
+            <div class="apodos-container" id="apodosContainer"></div>
+        </div>
+    </section>
+
+    <!-- ESCENA 4: GALERÍA -->
+    <section class="scene" data-scene="4">
+        <div class="scene-content">
+            <h2 class="scene-title">Mi musa ✨</h2>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </section>
+
+    <!-- ESCENA 5: DOS ESTRELLAS -->
+    <section class="scene" data-scene="5">
+        <div class="scene-content center-content">
+            <h2 class="scene-title">Aunque estemos lejos...</h2>
+            <div class="distance-animation">
+                <div class="star-container star-left" id="starLeft">
+                    <div class="star-glow blue"></div>
+                    <div class="star-text">Jonathan</div>
+                </div>
+                <div class="connection-line" id="connectionLine"></div>
+                <div class="star-container star-right" id="starRight">
+                    <div class="star-glow pink"></div>
+                    <div class="star-text">Melisa</div>
+                </div>
+                <div class="united-heart" id="unitedHeart"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESCENA 6: CARTA -->
+    <section class="scene" data-scene="6">
+        <div class="scene-content center-content">
+            <div class="letter-container glass" id="letterContainer">
+                <div class="letter-header">
+                    <h3>Para mi Melisa</h3>
+                    <div class="letter-decoration">💌</div>
+                </div>
+                <div class="letter-body" id="letterBody"></div>
+                <div class="letter-signature" id="letterSignature"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESCENA 7: CONTADOR -->
+    <section class="scene" data-scene="7">
+        <div class="scene-content center-content">
+            <h2 class="scene-title">Nuestro tiempo juntos</h2>
+            <div class="counter-display">
+                <div class="counter-item">
+                    <div class="counter-value" id="countMonths">0</div>
+                    <div class="counter-label">Meses</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="countDays">0</div>
+                    <div class="counter-label">Días</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="countHours">00</div>
+                    <div class="counter-label">Horas</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="countMinutes">00</div>
+                    <div class="counter-label">Minutos</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="countSeconds">00</div>
+                    <div class="counter-label">Segundos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESCENA 8: FINAL -->
+    <section class="scene" data-scene="8">
+        <div class="scene-content center-content">
+            <div class="final-celebration">
+                <div class="final-title" id="finalTitle">Feliz 2 meses</div>
+                <div class="final-heart big" id="finalHeart">❤️</div>
+                <div class="final-name" id="finalName">Melisa</div>
+                <div class="final-message" id="finalMessage">Te amo infinitamente</div>
+                <div class="final-signature" id="finalSignature">Jonathan ❤️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTROLES DE NAVEGACIÓN -->
+    <div class="controls">
+        <button class="control-btn" id="prevBtn" title="Anterior">◀</button>
+        <div class="scene-indicator" id="sceneIndicator">1 / 8</div>
+        <button class="control-btn" id="nextBtn" title="Siguiente">▶</button>
+    </div>
+
+    <!-- LUNA INTERACTIVA -->
+    <div class="moon" id="moon">
+        <div class="moon-glow"></div>
+    </div>
+
+    <!-- MENÚ -->
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="menu-panel hidden" id="menuPanel">
+        <button data-action="fullscreen">🖥️ Pantalla completa</button>
+        <button data-action="music">🎵 Música</button>
+        <button data-action="restart">🔄 Reiniciar</button>
+        <button data-action="effects">✨ Efectos especiales</button>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox hidden" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <img id="lightboxImg" src="" alt="Foto">
+    </div>
+
+    <!-- PÉTALOS -->
+    <div id="petalsContainer"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
